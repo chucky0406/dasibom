@@ -25,7 +25,7 @@ async function claude(userId, msg) {
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "x-api-key": KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 300, system: SYSTEM, messages: h })
+    body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 100, system: SYSTEM, messages: h })
   });
   const d = await res.json();
   const reply = d.content?.[0]?.text || "다시 말씀해 주세요 😊";
